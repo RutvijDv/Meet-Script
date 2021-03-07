@@ -3,10 +3,21 @@
     "name":"Google-Meet-Notes",
     "version":"1.0",
     "description":"A google meet supported chrome extension that make notes using Captions",
-
+    "background": {
+        "scripts": ["event.js"],
+        "persistent": false
+    },
     "page_action": {
         "default_popup": "popup.html"
     },
-
+    "content_scripts":[
+        {
+          "matches":["https://meet.google.com/*"],
+          "js":["./jquery.min.js","content.js"]
+        }
+    ],
+      "permissions":[
+        "tabs","https://meet.google.com/*","storage","notifications"
+    ]
 
 }
