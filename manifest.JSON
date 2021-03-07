@@ -1,0 +1,12 @@
+{
+    "manifest_version":2,
+    "name":"Google-Meet-Notes",
+    "version":"1.0",
+    "description":"A google meet supported chrome extension that make notes using Captions",
+
+    "page_action": {
+        "default_popup": "popup.html"
+    },
+
+
+}
