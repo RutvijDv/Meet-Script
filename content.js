@@ -72,14 +72,18 @@ function whenSubtitleOn(){
     const subtitleDiv = document.querySelector("div[jscontroller='TEjq6e']");
 
     const subtitleObserver = new MutationObserver((mutations) => {
-        
+     
       mutations.forEach((mutation) => {
         if(mutation.target.classList && mutation.target.classList.contains("iTTPOb")){
-            var newNodes = mutation.addedNodes;
-            console.log(newNodes);
-            newNodes.forEach(function(node){
-                console.log(node);
-            })
+            if(mutation.addedNodes.length){
+                var newNodes = mutation.addedNodes;
+                var speaker = newNodes["0"]?.parentNode?.parentNode?.parentNode?.querySelector(".zs7s8d.jxFHg")?.textContent;
+                setTimeout(function () {
+                    if(newNodes.length){
+                        console.log(speaker + " : " + newNodes["0"].innerText);
+                    }
+                }, 10000);
+            }
         }
         });
       });
