@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     }
 })
 
-chrome.storage.sync.get(["subtitleWarning"], function (result) {
+chrome.storage.onChanged.addListener(function(result, namespaces){
     console.log("caps" + result.subtitleWarning);
     if (result.subtitleWarning) {
         var notifOption = {
@@ -21,3 +21,4 @@ chrome.storage.sync.get(["subtitleWarning"], function (result) {
         chrome.notifications.create("captionOff", notifOption);
     }
 })
+

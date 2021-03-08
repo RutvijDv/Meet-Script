@@ -47,15 +47,48 @@ function callStarts() {
     if (IS_SUBTITLE_ON) whenSubtitleOn();
     else whenSubtitleOff();
 
-    const subtitleObserver = new MutationObserver(() => {
+    const subtitleOnOff = new MutationObserver(() => {
         IS_SUBTITLE_ON = subtitleDiv.style.display === "none" ? false : true;
         if (IS_SUBTITLE_ON) whenSubtitleOn();
         else whenSubtitleOff();
     });
 
-    subtitleObserver.observe(subtitleDiv, {
+    subtitleOnOff.observe(subtitleDiv, {
         attributes: true,
         attributeOldValue: true,
         attributeFilter: ["style"],
     });
 };
+
+
+function whenSubtitleOn(){
+
+
+    chrome.storage.sync.set({
+        subtitleWarning: false,
+    });
+    
+    // DOM element containing all subtitles
+    const subtitleDiv = document.querySelector("div[jscontroller='TEjq6e']");
+
+    const subtitleObserver = new MutationObserver((mutations) => {
+        
+      mutations.forEach((mutation) => {
+        if(mutation.target.classList && mutation.target.classList.contains("iTTPOb")){
+            var newNodes = mutation.addedNodes;
+            console.log(newNodes);
+            newNodes.forEach(function(node){
+                console.log(node);
+            })
+        }
+        });
+      });
+
+    // Start observing subtitle div
+    subtitleObserver.observe(subtitleDiv, {
+      childList: true,
+      subtree: true,
+      attributes: false,
+      characterData: false,
+    });
+  };
