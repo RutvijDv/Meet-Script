@@ -13,7 +13,7 @@
     "content_scripts":[
         {
           "matches":["https://meet.google.com/*"],
-          "js":["./jquery.min.js","content.js"]
+          "js":["jquery.min.js","FileSaver.min.js","content.js"]
         }
     ],
       "permissions":[
