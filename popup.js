@@ -5,12 +5,14 @@ chrome.storage.sync.get(["ON_CALL"], function (result) {
 })
 
 $("#download").on('click', function () {
-    chrome.storage.sync.get(["script"], function (output) {
+    chrome.storage.sync.get(["script","meet_code"], function (output) {
 
         var blob = new Blob(output.script, {
             type: "text/plain;charset=utf-8"
         });
 
-        saveAs(blob, "script.txt");
+        var name = output.meet_code + ".txt";
+
+        saveAs(blob, name);
     })
 })
