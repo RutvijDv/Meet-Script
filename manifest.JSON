@@ -3,6 +3,9 @@
     "name":"Google-Meet-Notes",
     "version":"1.0",
     "description":"A google meet supported chrome extension that make notes using Captions",
+    "icons": {
+        "128": "round-table.png" 
+    },
     "background": {
         "scripts": ["event.js"],
         "persistent": false
