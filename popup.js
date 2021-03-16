@@ -5,14 +5,29 @@ chrome.storage.sync.get(["ON_CALL"], function (result) {
 })
 
 $("#download").on('click', function () {
-    chrome.storage.sync.get(["script","meet_code"], function (output) {
-
-        var blob = new Blob(output.script, {
-            type: "text/plain;charset=utf-8"
-        });
+    chrome.storage.sync.get(["script", "meet_code"], function (output) {
 
         var name = output.meet_code + ".txt";
 
-        saveAs(blob, name);
+        const doc = new jsPDF();
+
+        doc.setFontSize(22);
+        doc.text(55, 20, 'G-Note :' + name);
+
+        doc.setFontSize(16);
+        var splitText = doc.splitTextToSize(output.script, 180);
+        var y = 30;
+
+        for (var i = 0; i < splitText.length; i++) {
+            if (y > 280) {
+                y = 10;
+                doc.addPage();
+            }
+            doc.text(15, y, splitText[i]);
+            y = y + 7;
+        }
+
+        doc.save(name + ".pdf");
+
     })
 })
