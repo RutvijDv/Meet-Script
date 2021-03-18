@@ -1,11 +1,9 @@
 chrome.storage.sync.get(["subtitleWarning"], function (result) {
     if(result.subtitleWarning){
         $("#captions-off").css("display","block");
-        $("#captions-on").css("display","none");
     }
     else{
         $("#captions-off").css("display","none");
-        $("#captions-on").css("display","block");
     }
 })
 
