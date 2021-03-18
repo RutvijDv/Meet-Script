@@ -1,16 +1,12 @@
 chrome.storage.sync.get(["ON_CALL"], function (result) {
     console.log(result);
-    if (result.ON_CALL) $("#meet-start").html("Meet - Started");
-    else $("#meet-start").html("Meet - Not - Started");
+    if (result.ON_CALL) $("#meet-start").css("display","block");
+    else $("#meet-start").css("display","none");
 })
 
 $("#download").on('click', function () {
     chrome.storage.sync.get(["script", "meet_code"], function (output) {
-
-
-
         const doc = new jsPDF();
-
         doc.setFillColor(221, 221, 221);
         doc.setLineWidth(1.5);
         doc.rect(0, 0, 220, 60, "F");

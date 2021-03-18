@@ -7,16 +7,55 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body style="height: fit-content;width: fit-content; ">
-
-    <div style="width: max-content;font-weight: bold;">
-        <p>Welcome To GMeet Notes</p>
+<body>
+    <div class="heading">
+        <div class="logo">
+            <img src="round-table.png" alt="not found" width="100px" height="100px">
+        </div>
+        
+        <div class="brandname">
+            <p class="namelettering"><span class="bluecolor">M</span><span class="pinkcolor">eet</span>&nbsp;<span class="bluecolor">S</span><span class="pinkcolor">cript</span></p>
+        </div>
     </div>
-    <div id="meet-start"></div>
-    <button id="download">download</button>
+    
+    
+    <div id="meet-start" style="display: none;text-align: center;margin-top: 20px;">
+        <p style="margin: 0;">
+            <div class="icon-container">
+                <div class="icon icon-rotate"><i class="fa fa-phone"></i></div>
+            </div>
+        </p>
+        <p style="font-family: 'Crimson Text', serif;font-weight: 600;font-size: 20px;margin: 0;">You are on a call.</p>
+        
+    </div>
+    <div id="captions-off" style="display: none;">
+        <div style="text-align: center;margin-top: 10px;"><p style="font-family: 'Crimson Text', serif;font-size: 15px;width: 200px;margin: auto;color: red;">Please put on captions to get your notes saved.</p></div>
+    </div>
+    <div id="captions-on" >
+        <div style="text-align: center;margin-top: 10px;">
+            <a class="btn btn--svg js-animated-button" id="download" role="button"><span class="btn--svg__label">Download PDF</span><svg class="btn--svg__circle" width="190" x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60">
+                <circle class="js-discover-circle" stroke="#FFF" fill="rgb(245,119,151)" cx="30" cy="30" r="28.7"></circle>
+            </svg><svg class="btn--svg__border" x="0px" y="0px" preserveaspectratio="none" viewBox="2 29.3 56.9 13.4" enable-background="new 2 29.3 56.9 13.4" width="190">
+                <g class="btn--svg__border--left js-discover-left-border" id="Calque_2">
+                    <path fill="none" stroke="rgb(115,212,245)" stroke-width="1" stroke-miterlimit="1" d="M30.4,41.9H9c0,0-6.2-0.3-6.2-5.9S9,30.1,9,30.1h21.4"></path>
+                </g>
+                <g class="btn--svg__border--right js-discover-right-border" id="Calque_3">
+                    <path fill="none" stroke="rgb(115,212,245)" stroke-width="1" stroke-miterlimit="1" d="M30.4,41.9h21.5c0,0,6.1-0.4,6.1-5.9s-6-5.9-6-5.9H30.4"></path>
+                </g>
+            </svg></a>
+        </div>
+        
+        
+    </div>
+    
+    
 
     <script src="jquery.min.js"></script>
     <script src="jspdf.min.js"></script>
