@@ -27,11 +27,17 @@ const docObserver = new MutationObserver(() => {
         })
 
         callStarts();
+    } else {
+        ON_CALL = false;
+        chrome.storage.sync.set({
+            ON_CALL: false,
+        })
     }
 });
 
 docObserver.observe(document.body, {
-    childList: true
+    childList: true,
+    subtree: true,
 });
 
 
@@ -46,13 +52,13 @@ function callStarts() {
     const subtitleDiv = document.querySelector("div[jscontroller='TEjq6e']");
     MEET_CODE = window.location.pathname;
     MEET_CODE = MEET_CODE.substr(1, MEET_CODE.length - 1);
-    chrome.storage.sync.get(["meet_code","script"],function(result){
+    chrome.storage.sync.get(["meet_code", "script"], function (result) {
 
-        if(result.meet_code && result.meet_code==MEET_CODE){
+        if (result.meet_code && result.meet_code == MEET_CODE) {
             script = result.script;
         }
         chrome.storage.sync.set({
-            script : script
+            script: script
         })
     })
     // To notify the first time
@@ -79,10 +85,6 @@ function whenSubtitleOn() {
         subtitleWarning: false,
         meet_code: MEET_CODE
     });
-
-    chrome.storage.sync.get(function(result){
-        console.log(result);
-    })
     // DOM element containing all subtitles
     const subtitleDiv = document.querySelector("div[jscontroller='TEjq6e']");
 
@@ -94,28 +96,26 @@ function whenSubtitleOn() {
                 if (mutation.addedNodes.length) {
                     var newNodes = mutation.addedNodes;
                     var speaker = newNodes["0"]?.parentNode?.parentNode?.parentNode?.querySelector(".zs7s8d.jxFHg")?.textContent;
-                    if(speaker){
+                    if (speaker) {
                         setTimeout(function () {
                             if (newNodes.length) {
-                                if(last_speaker!=speaker){
-                                    console.log(speaker + " : " + newNodes["0"].innerText);
+                                if (last_speaker != speaker) {
                                     script.push(speaker + " : " + newNodes["0"].innerText + "\r\n");
                                     last_speaker = speaker;
-                                }else{
+                                } else {
                                     var lastText = script.pop();
-                                    lastText = lastText.slice(0,-2);
+                                    lastText = lastText.slice(0, -2);
                                     lastText = lastText + newNodes["0"].innerText + "\r\n";
-                                    console.log(lastText);
                                     script.push(lastText);
                                 }
-        
+
                                 chrome.storage.sync.set({
                                     script: script,
                                 })
                             }
                         }, 10000);
                     }
-                    
+
                 }
             }
         });

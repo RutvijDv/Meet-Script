@@ -10,7 +10,6 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 })
 
 chrome.storage.onChanged.addListener(function(result, namespaces){
-    console.log("caps" + result.subtitleWarning);
     if (result.subtitleWarning) {
         var notifOption = {
             type: "basic",
