@@ -41,7 +41,7 @@ The background script keeps on observing the captions and saves in _chrome stora
 
 </br>
 <p align="center">
-<img src="" alt="Example pdf" />
+<img src="https://i.imgur.com/kXyMHEg.png" alt="Example pdf" />
 <p align="center">PDF Preview</p>
 </p>
 </br>
@@ -54,13 +54,13 @@ Follow the given steps :
 - Open Google Chrome. Go to **Menu > More tools > Extensions** or go to `chrome://extensions`.
 - **Turn on Developer mode button**.
 
-  <img src="https://i.imgur.com/PUkNCfp.png" alt="Example pdf" >
+  <img src="https://i.imgur.com/PUkNCfp.png" alt="demo 1" >
 
-- Click on **Load unpacked**.Select the **cloned folder** from your pc.
+- Click on **Load unpacked**. Select the **cloned folder** from your pc.
 - Your Extension would be on the Extensions list.
 - Make sure the activation button is turned on.
   <br>
-  <img src="https://i.imgur.com/kVZ25Yb.png" alt="Example pdf" >
+  <img src="https://i.imgur.com/kVZ25Yb.png" alt="demo 2" >
   <br>
 - **Pin the extension** for convinience.
 
