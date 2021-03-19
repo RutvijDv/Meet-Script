@@ -1,18 +1,18 @@
 # Meet Script
 
-<a href="https://github.com/RutvijDv/Google-Meet-Notes/issues">
-  <img alt="Issues" src="https://img.shields.io/github/issues/RutvijDv/Google-Meet-Notes" />
+<a href="https://github.com/RutvijDv/Meet-Script/issues">
+  <img alt="Issues" src="https://img.shields.io/github/issues/RutvijDv/Meet-Script" />
 </a>
 
-<a href="https://github.com/RutvijDv/Google-Meet-Notes/issues">
+<a href="https://github.com/RutvijDv/Meet-Script/issues">
   <img alt="Issues" src="https://img.shields.io/badge/contribution-welcome-green" />
 </a>
 
-<a href="https://github.com/RutvijDv/Google-Meet-Notes/stargazers">
-  <img alt="Issues" src="https://img.shields.io/github/stars/RutvijDv/Google-Meet-Notes" />
+<a href="https://github.com/RutvijDv/Meet-Script/stargazers">
+  <img alt="Issues" src="https://img.shields.io/github/stars/RutvijDv/Meet-Script" />
 </a>
 
-![logo not found](https://github.com/RutvijDv/Google-Meet-Notes/blob/main/round-table-128.png?raw=true)
+![logo not found](https://i.imgur.com/fStbFex.png)
 
 A Chrome Extension that gives you transcript of google meet. Start captions and all the script will be saved in chrome storage which can be downloaded in pdf format.
 Helps you keep a record of all the conversation that took place on **_GOOGLE MEET_**.
@@ -60,7 +60,7 @@ Follow the given steps :
 - Your Extension would be on the Extensions list.
 - Make sure the activation button is turned on.
   <br>
-  <img src="https://i.imgur.com/kVZ25Yb.png" alt="demo 2" >
+  <img src="https://i.imgur.com/DX0ZCSe.png" alt="demo 2" >
   <br>
 - **Pin the extension** for convinience.
 

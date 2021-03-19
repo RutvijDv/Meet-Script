@@ -1,6 +1,6 @@
 {
     "manifest_version":2,
-    "name":"Google-Meet-Notes",
+    "name":"Meet Script",
     "version":"1.0",
     "description":"A google meet supported chrome extension that make notes using Captions",
     "icons": {
