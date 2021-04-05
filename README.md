@@ -76,3 +76,8 @@ Follow the Steps for your Convinience:
 ## Contributions
 
 You can contribute to this project by solving existing issues or adding a new feature.
+
+### Contributors
+- <a href="https://github.com/RutvijDv">Rutvij Vamja</a>
+- <a href="https://github.com/shrushti22">Shrushti Vasaniya</a>
+
